@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AK Phone · an Android-style phone in plain JavaScript</title>
+  <meta name="description" content="A working Android-style phone simulator built with plain HTML, CSS and JavaScript. 28 apps and 9 games, a live web browser, voice assistant, recorder, translate, currency rates, 9 games. No framework, no build step.">
+  <meta property="og:title" content="AK Phone · an Android-style phone in plain JavaScript">
+  <meta property="og:description" content="28 working apps, 9 games, a live browser, voice assistant, recorder and 9 games. No framework, no build step.">
+  <meta property="og:image" content="https://anekkumar9518.github.io/ak-phone/docs/hero.png">
+  <meta name="theme-color" content="#0d0d0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="stylesheet" href="assets/css/android.css">
+  <link rel="stylesheet" href="assets/css/android-more.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='2' width='18' height='28' rx='5' fill='%23e2571f'/%3E%3Crect x='10' y='6' width='12' height='18' rx='2' fill='%23fff'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="top">
+    <a class="top__brand" href="./"><span class="top__mark" aria-hidden="true"></span>AK Phone</a>
+    <nav class="top__nav">
+      <a href="#apps">Apps</a>
+      <a href="#how">How it works</a>
+      <a class="top__gh" href="https://github.com/Anekkumar9518/ak-phone"><i data-lucide="github" aria-hidden="true"></i>Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <div class="droid-demo droid-demo--hero" id="testdrive">
+        <div class="droid-demo__copy">
+          <p class="eyebrow">Open source · plain HTML, CSS &amp; JavaScript</p>
+          <h1 class="droid-demo__title">A phone that actually works, in a web page.</h1>
+          <p class="droid-demo__lead">AK Phone is an Android-style phone simulator with 28 working apps and 9 games: a live browser, a voice assistant, a recorder, translation, live currency rates, a QR scanner and a speed test. No framework and no build step. Open <code>index.html</code> and it runs.</p>
+          <div class="droid-try">
+            <button type="button" class="droid-try__btn droid-try__btn--main" data-droid-search="weather in delhi"><i data-lucide="search" aria-hidden="true"></i><span><b>Search Google live</b><small>"weather in delhi"</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="assistant"><i data-lucide="mic" aria-hidden="true"></i><span><b>Talk to the Assistant</b><small>"What's the time?"</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="translate"><i data-lucide="languages" aria-hidden="true"></i><span><b>Translate</b><small>16 languages, read aloud</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="recorder"><i data-lucide="mic-vocal" aria-hidden="true"></i><span><b>Record a voice note</b><small>Live waveform</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="store"><i data-lucide="shopping-bag" aria-hidden="true"></i><span><b>Install a game</b><small>Store · 9 games</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="paint"><i data-lucide="palette" aria-hidden="true"></i><span><b>Draw something</b><small>Saves to Gallery</small></span></button>
+            <button type="button" class="droid-try__btn" data-droid-app="currency"><i data-lucide="indian-rupee" aria-hidden="true"></i><span><b>Live exchange rates</b><small>ECB, via Frankfurter</small></span></button>
+          </div>
+          <ul class="droid-demo__how">
+            <li><b>Unlock</b> swipe up or tap</li>
+            <li><b>Quick settings</b> swipe down from the top</li>
+            <li><b>All apps</b> swipe up on the home screen</li>
+            <li><b>Power menu</b> hold the power key</li>
+            <li><b>Screenshot</b> quick settings → Screenshot</li>
+            <li><b>Back</b> the ◀ button or Esc</li>
+          </ul>
+        </div>
+        <div class="droid-wrap" id="droidWrap">
+          <div class="droid" id="droid" role="region" aria-label="AK Phone, a working phone simulator">
+            <button type="button" class="droid__key droid__key--power" aria-label="Power button"></button>
+            <button type="button" class="droid__key droid__key--up" aria-label="Volume up"></button>
+            <button type="button" class="droid__key droid__key--down" aria-label="Volume down"></button>
+            <div class="droid__screen" id="dScreen"><noscript><p class="droid__nojs">Turn on JavaScript to use the phone.</p></noscript></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap block" id="apps">
+      <h2 class="h2">What's inside</h2>
+      <div class="cards">
+        <article class="card"><h3><i data-lucide="smartphone" aria-hidden="true"></i>System</h3><p>Boot animation, lock screen, status bar with your real battery level (where the browser shares it), notification shade with quick-settings tiles and brightness, home screen with folders, app drawer with search, recents, back/home/recents navigation, power menu, charging and low-battery alerts, vibration, light and dark themes, and an on-screen keyboard.</p></article>
+        <article class="card"><h3><i data-lucide="layout-grid" aria-hidden="true"></i>Apps</h3><p>Browser (live sites and Google), Store, Settings, Phone, Messages, Camera, Gallery, Maps, Weather (live), Clock with stopwatch and timer, Calculator, Calendar, Notes, Files, voice Assistant, Music (live radio), Videos, Device Info, QR scanner and generator, and an internet Speed Test.</p></article>
+        <article class="card"><h3><i data-lucide="wrench" aria-hidden="true"></i>Tools <span class="new">new</span></h3><p>Recorder with a live waveform, Translate in 16 languages with read-aloud, Dictionary with pronunciation, Currency with live ECB rates, News (Hacker News top stories), Paint with undo, a two-octave Piano, a Compass with spirit level, and a Screenshot tile that saves the screen to Gallery.</p></article>
+        <article class="card"><h3><i data-lucide="gamepad-2" aria-hidden="true"></i>Games</h3><p>2048, Tic Tac Toe (an unbeatable minimax bot), Snake, Flappy, Memory, Minesweeper, Bricks, Sudoku and Lead Catcher. Install them from the Store; best scores are saved on your device.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap block" id="how">
+      <h2 class="h2">How it works</h2>
+      <div class="how">
+        <div>
+          <p>Each app is a function that gets an empty <code>&lt;section&gt;</code> and returns hooks like <code>show</code>, <code>hide</code> and <code>back</code>. A small window manager opens, switches and closes them, and keeps the state (installed games, notes, settings) in <code>localStorage</code>.</p>
+          <p>Real browser APIs do the heavy lifting: Web Speech for the assistant, MediaRecorder and Web Audio for the recorder and piano, <code>getUserMedia</code> and BarcodeDetector for the camera and QR scanner, DeviceOrientation for the compass, the Battery API for the status bar, and the Vibration API for haptics.</p>
+          <p>Live data comes from free, keyless APIs: Open-Meteo (weather), Frankfurter (exchange rates), MyMemory (translation), dictionaryapi.dev, Hacker News, and Cloudflare's speed test endpoints. Nothing you record, draw or type is uploaded.</p>
+        </div>
+        <pre class="tree"><code>assets/js/android.js        system UI + core apps
+assets/js/android-apps.js   assistant, media, QR, games
+assets/js/android-more.js   tools: recorder, translate…
+assets/css/android.css      phone frame + system UI
+assets/css/android-more.css styles for the tools
+index.html                  this demo page</code></pre>
+      </div>
+      <p class="limits"><i data-lucide="info" aria-hidden="true"></i>It's a simulator: real Android apps and Google Play can't run inside a web page, so every app is written for this phone. Many sites refuse to be shown inside other pages, so the browser opens those as snapshots with a button to the live site.</p>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Built by <a href="https://www.anekkumar.in">Anek Kumar</a>, a full stack developer and digital marketer in Noida, India. <a href="https://github.com/Anekkumar9518">GitHub</a> · <a href="https://wa.me/919518848804?text=Hi%20Anek%2C%20I%20saw%20AK%20Phone">WhatsApp</a></p>
+    <p class="foot__lic">MIT licensed. Icons by <a href="https://lucide.dev">Lucide</a> (ISC).</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/android.js" defer></script>
+  <script src="assets/js/android-apps.js" defer></script>
+  <script src="assets/js/android-more.js" defer></script>
+  <script>document.addEventListener("DOMContentLoaded", () => window.lucide && window.lucide.createIcons());</script>
+</body>
+</html>
